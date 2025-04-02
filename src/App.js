@@ -1,5 +1,5 @@
 import './App.css';
-import Tarefa from './components/Tarefa';
+import ListaTarefas from './components/ListaTarefas';
 
 function App() {
   const tarefas = [
@@ -15,12 +15,7 @@ function App() {
       <input type="text" placeholder="Adicionar nova tarefa" />
       <button className="adicionar-tarefa">Adicionar</button>
 
-      <h2>Lista de Tarefas</h2>
-      {
-        tarefas.map((tarefa, index) => (
-          <Tarefa key={index} tituloTarefa={tarefa.titulo} status={tarefa.status} />
-        ))
-      }
+      <ListaTarefas tarefas={tarefas} />
     </div>
   );
 }

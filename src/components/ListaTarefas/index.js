@@ -3,17 +3,18 @@ import Tarefa from '../Tarefa';
 const ListaTarefas = ({ tarefas }) => {
   return (
     <>
-      <h3>Filtrar Tarefa</h3>
+    <h2>Lista de Tarefas</h2>
+      <span>Filtrar Tarefa: </span>
       <select className="filtro-tarefa">
         <option value="todas">Todas</option>
         <option value="pendente">Pendentes</option>
         <option value="concluida">Concluídas</option>
       </select>
-      <h2>Lista de Tarefas</h2>
+      <h2>Tarefas</h2>
       <ul className="tarefas">
         {
           tarefas.map((tarefa) => (
-            <Tarefa tituloTarefa={tarefa.tituloTarefa} />
+            <Tarefa titulo={tarefa.titulo} />
           ))
         } 
       </ul>

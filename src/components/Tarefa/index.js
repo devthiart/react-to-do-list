@@ -1,6 +1,6 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
-const Tarefa = ({tituloTarefa}) => {
+const Tarefa = ({titulo}) => {
   const [status, setStatus] = useState('pendente');
 
   const handleChange = (event) => {
@@ -12,7 +12,7 @@ const Tarefa = ({tituloTarefa}) => {
     <li>
       <div className={"tarefa " + status}>
         <input type="checkbox" onChange={handleChange} />
-        <span>{tituloTarefa}</span>
+        <span>{titulo}</span>
         <button className="delete">Deletar</button>
       </div>
     </li>
