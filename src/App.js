@@ -1,23 +1,26 @@
-import logo from './logo.svg';
 import './App.css';
+import Tarefa from './components/Tarefa';
 
 function App() {
+  const tarefas = [
+    { titulo: 'Estudar React', status: 'pendente' },
+    { titulo: 'Estudar JavaScript', status: 'pendente' },
+    { titulo: 'Estudar HTML', status: 'pendente' },
+    { titulo: 'Estudar CSS', status: 'pendente' },
+  ];
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h2>Cadastrar Tarefas</h2>
+      <input type="text" placeholder="Adicionar nova tarefa" />
+      <button className="adicionar-tarefa">Adicionar</button>
+
+      <h2>Lista de Tarefas</h2>
+      {
+        tarefas.map((tarefa, index) => (
+          <Tarefa key={index} tituloTarefa={tarefa.titulo} status={tarefa.status} />
+        ))
+      }
     </div>
   );
 }
