@@ -4,10 +4,8 @@ export const TarefaContext = createContext();
 
 export const TarefaProvider = ({ children }) => {
   const [tarefas, setTarefas] = useState([
-    { id: 1, titulo: "Estudar Angular", status: "pendente" },
-    { id: 2, titulo: "Estudar TypeScript", status: "pendente" },
-    { id: 3, titulo: "Estudar HTML", status: "concluida" },
-    { id: 4, titulo: "Estudar SaSS", status: "pendente" },
+    { id: 1, titulo: "Exemplo Tarefa Pendente", status: "pendente" },
+    { id: 2, titulo: "Exemplo Tarefa Concluida", status: "concluida" },
   ]);
 
   const adicionarTarefa = (titulo) => {
