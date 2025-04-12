@@ -17,7 +17,7 @@ const ListaTarefas = () => {
       <ul className="tarefas">
         {
           tarefas.map((tarefa) => (
-            <Tarefa key={tarefa.id} titulo={tarefa.titulo} />
+            <Tarefa key={tarefa.id} id={tarefa.id} titulo={tarefa.titulo} />
           ))
         } 
       </ul>

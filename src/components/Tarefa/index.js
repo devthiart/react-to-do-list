@@ -1,11 +1,19 @@
 import { useState } from 'react';
+import { useContext } from 'react';
+import { TarefaContext } from '../../context/TarefaContext';
 
-const Tarefa = ({titulo}) => {
+const Tarefa = ({id, titulo}) => {
+  const { deletarTarefa, toggleStatusTarefa } = useContext(TarefaContext);
   const [status, setStatus] = useState('pendente');
 
   const handleChange = (event) => {
     const isChecked = event.target.checked;
     setStatus(isChecked ? 'concluida' : 'pendente');
+    toggleStatusTarefa(id);
+  }
+
+  const handleDelete = () => {
+    deletarTarefa(id);
   }
   
   return (
@@ -13,7 +21,7 @@ const Tarefa = ({titulo}) => {
       <div className={"tarefa " + status}>
         <input type="checkbox" onChange={handleChange} />
         <span>{titulo}</span>
-        <button className="delete">Deletar</button>
+        <button className="delete" onClick={handleDelete}>Deletar</button>
       </div>
     </li>
   )
