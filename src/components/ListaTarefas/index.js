@@ -1,6 +1,9 @@
+import { useContext } from 'react';
 import Tarefa from '../Tarefa';
+import { TarefaContext } from '../../context/TarefaContext';
 
-const ListaTarefas = ({ tarefas }) => {
+const ListaTarefas = () => {
+  const { tarefas } = useContext(TarefaContext);
   return (
     <>
     <h2>Lista de Tarefas</h2>
@@ -14,7 +17,7 @@ const ListaTarefas = ({ tarefas }) => {
       <ul className="tarefas">
         {
           tarefas.map((tarefa) => (
-            <Tarefa titulo={tarefa.titulo} />
+            <Tarefa key={tarefa.id} titulo={tarefa.titulo} />
           ))
         } 
       </ul>
