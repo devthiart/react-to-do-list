@@ -17,13 +17,11 @@ export const TarefaProvider = ({ children }) => {
       status: "pendente",
     };
     setTarefas([...tarefas, novaTarefa]);
-    console.log(tarefas);
   }
 
   const deletarTarefa = (id) => {
     const tarefasAtualizadas = tarefas.filter(tarefa => tarefa.id !== id);
     setTarefas(tarefasAtualizadas);
-    console.log(tarefas);
   }
 
   const toggleStatusTarefa = (id) => {
@@ -34,7 +32,6 @@ export const TarefaProvider = ({ children }) => {
       return tarefa;
     });
     setTarefas(tarefasAtualizadas);
-    console.log(tarefas);
   }
 
   return (

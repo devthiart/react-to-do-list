@@ -5,7 +5,7 @@ import { TarefaContext } from '../../context/TarefaContext';
 const ListaTarefas = () => {
   const { tarefas } = useContext(TarefaContext);
   return (
-    <>
+    <div className="lista-tarefas">
     <h2>Lista de Tarefas</h2>
       <span>Filtrar Tarefa: </span>
       <select className="filtro-tarefa">
@@ -21,7 +21,7 @@ const ListaTarefas = () => {
           ))
         } 
       </ul>
-    </>
+    </div>
   )
 }
 
