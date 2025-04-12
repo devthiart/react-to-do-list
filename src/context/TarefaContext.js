@@ -12,7 +12,7 @@ export const TarefaProvider = ({ children }) => {
 
   const adicionarTarefa = (titulo) => {
     const novaTarefa = {
-      id: tarefas.length + 1,
+      id: Date.now(),
       titulo: titulo,
       status: "pendente",
     };
