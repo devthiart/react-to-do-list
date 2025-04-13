@@ -16,7 +16,7 @@ const Tarefa = ({ tarefa }) => {
   }
   
   return (
-    <li className="lista-tarefas__item-lista">
+    <li className="container-tarefas__lista__item">
       <div className={"tarefa " + tarefa.status}>
         <input type="checkbox" onChange={handleChange} checked={isChecked} />
         <span>{tarefa.titulo}</span>

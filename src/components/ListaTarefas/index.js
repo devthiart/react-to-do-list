@@ -20,15 +20,15 @@ const ListaTarefas = () => {
   }, [tarefas, filtro]);
 
   return (
-    <div className="lista-tarefas">
-      <h2 className="lista-tarefas__titulo">Tarefas</h2>
+    <div className="container-tarefas">
+      <h2 className="container-tarefas__titulo">Tarefas</h2>
       <label>Filtrar Tarefa: </label>
-      <select className="lista-tarefas__filtro" value={filtro} onChange={(event) => {setFiltro(event.target.value)}}>
-        <option className="lista-tarefas__item-filtro" value="todas" default>Todas</option>
-        <option className="lista-tarefas__item-filtro" value="pendente">Pendentes</option>
-        <option className="lista-tarefas__item-filtro" value="concluida">Concluídas</option>
+      <select className="container-tarefas__filtro" value={filtro} onChange={(event) => {setFiltro(event.target.value)}}>
+        <option className="container-tarefas__filtro__item" value="todas" default>Todas</option>
+        <option className="container-tarefas__filtro__item" value="pendente">Pendentes</option>
+        <option className="container-tarefas__filtro__item" value="concluida">Concluídas</option>
       </select>
-      <ul className="lista-tarefas__lista">
+      <ul className="container-tarefas__lista">
         {
           tarefasFiltradas.map((tarefa) => (
             <Tarefa key={tarefa.id} tarefa={tarefa} />
