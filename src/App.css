@@ -3,6 +3,7 @@
   --bg-color-light: #fefefe;
   --color-primary: #2399f5;
   --color-secondary: #61dafb;
+  --delete-button: #fd7e75;
 }
 
 html {
@@ -64,7 +65,7 @@ body {
 
 .cadastro-tarefa__enviar:hover {
   font-weight: 500;
-  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
 }
 
 .cadastro-tarefa__enviar:active {
@@ -72,7 +73,69 @@ body {
   box-shadow: none;
 }
 
+.container-tarefas {
+  display: flex;
+  flex-direction: column;
+  margin: 2rem auto;
+}
+
+.container-tarefas__titulo {
+  font-size: 1.75rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.container-tarefas__container-filtro {
+  margin: 0 auto;
+}
+
+.container-tarefas__filtro {
+  border: 1px solid #c6c6c6;
+  border-radius: 0.2rem;
+  cursor: pointer;
+  padding: 0.25rem;
+  margin: 0.75rem auto;
+}
+
+.container-tarefas__lista {
+  padding: 0;
+  margin: 0;
+}
+
+.container-tarefas__lista__item {
+  list-style: none;
+  margin: 0.5rem auto;
+}
+
+.container-tarefas__lista__item__tarefa {
+  margin: 1rem auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.tarefa__check {
+  cursor: pointer;
+  height: 1.2rem;
+  width: 1.2rem;
+}
+
+.tarefa__check:checked {
+  background-color: var(--color-primary);
+}
+
 .concluida {
   color: #c6c6c6;
   text-decoration: line-through;
+}
+
+.tarefa__delete {
+  background-color: var(--delete-button);
+  border: none;
+  border-radius: 0.5rem;
+  color: white;
+  cursor: pointer;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
 }
