@@ -10,17 +10,21 @@ const CadastroTarefa = () => {
     setTituloNovaTarefa(event.target.value);
   }
 
-  const handleSubmit = () => {
+  const handleSubmit = (event) => {
+    event.preventDefault();
     adicionarTarefa(tituloNovaTarefa);
     setTituloNovaTarefa('');
   }
 
   return (
-    <div className="cadastro-tarefa">
-      <h2>Cadastrar Tarefas</h2>
-      <input type="text" placeholder="Adicionar nova tarefa" value={tituloNovaTarefa} onChange={handleChange} />
-      <button className="adicionar-tarefa" onClick={handleSubmit}>Adicionar</button>
-    </div>
+    <form className="cadastro-tarefa">
+      {/* Label associada ao campo de texto por acessibilidade.*/}
+      <label hidden htmlFor="cadastro-tarefa__texto">
+        Cadastrar nova tarefa:
+      </label>
+      <input className="cadastro-tarefa__input" type="text" placeholder="O que você gostaria de fazer?" value={tituloNovaTarefa} onChange={handleChange} />
+      <button className="cadastro-tarefa__enviar" type="submit" onClick={handleSubmit}>Adicionar</button>
+    </form>
   )
 }
 
