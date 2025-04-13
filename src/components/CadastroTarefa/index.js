@@ -12,12 +12,22 @@ const CadastroTarefa = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    adicionarTarefa(tituloNovaTarefa);
-    setTituloNovaTarefa('');
+    if(tituloNovaTarefa !== '') {
+      adicionarTarefa(tituloNovaTarefa);
+      setTituloNovaTarefa('');
+    } else {
+      alert('Tarefas devem ter um nome');
+    }
+  }
+
+  const handleKeyDown = (event) => {
+    if(event.key === 'Enter') {
+      handleSubmit(event);
+    }
   }
 
   return (
-    <form className="cadastro-tarefa">
+    <form className="cadastro-tarefa" onKeyDown={handleKeyDown}>
       {/* Label associada ao campo de texto por acessibilidade.*/}
       <label hidden htmlFor="cadastro-tarefa__texto">
         Cadastrar nova tarefa:
